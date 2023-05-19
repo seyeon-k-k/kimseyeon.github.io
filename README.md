@@ -11,7 +11,7 @@ I mainly use with C, JAVA, and PYTHON, and I have DB experience. I used HTML CSS
 
 ## Education
 
-- SKKU South Korea
+- **SKKU** South Korea
 
   B.S. SYSTEMS MANAGEMENT ENGINEERING. 2018~
 
