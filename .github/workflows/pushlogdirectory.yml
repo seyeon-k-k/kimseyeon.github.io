@@ -16,7 +16,7 @@ jobs:
     - name: Copy Pushed File to 'log' Directory
       run: |
         mkdir -p log
-        cp ${GITHUB_WORKSPACE}/${{ github.event.head_commit.added }} log/
+        cp -r ${GITHUB_WORKSPACE}/${{ github.event.head_commit.added }} log/
 
     - name: Commit and Push Changes
       run: |
