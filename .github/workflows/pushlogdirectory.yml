@@ -1,32 +1,27 @@
-name: Copy Pushed File to log Directory
+name: Copy Pushed File to 'log' Directory
 
-#when a push event occurs on the main branch
 on:
   push:
     branches:
       - main
-# the workflow will run the copy job
-# the copy job checks out the repository and performs the steps to copy the pushed file to the log directory.
+
 jobs:
   copy:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
 
-# copy the pushed file to the 'log' directory
-    - name: Copy Pushed File to log Directory
+    - name: Copy Pushed File to 'log' Directory
       run: |
-        
         mkdir -p log
-        cp ${{ github.event.client_payload.file }} log/
+        cp ${GITHUB_WORKSPACE}/${{ github.event.head_commit.added }} log/
 
-# commit and push all the changes
     - name: Commit and Push Changes
       run: |
-        git config --global user.name 'seyeon-k-k'
-        git config --global user.email 'seyeon1121@naver.com'
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'actions@github.com'
         git add log/
-        git commit -m "Copy pushed file to log directory by GitHub Actions"
+        git commit -m "Copy pushed file to 'log' directory by GitHub Actions"
         git push
