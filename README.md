@@ -12,16 +12,18 @@ I mainly use with C, JAVA, and PYTHON, and I have DB experience. I used HTML CSS
 ## Education
 
 - SKKU South Korea
+
   B.S. SYSTEMS MANAGEMENT ENGINEERING. 2018~
 
 ## Achievements and Certifications
 
   - TOEFL 96
   - OPIC IH
-  - ETEST PROFESSIONAL 1
+  - ETEST PROFESSIONAL 1급
 
 ## Contact
 
 email: seyeon1121@naver.com
+
 github: seyeon-k-k
 
