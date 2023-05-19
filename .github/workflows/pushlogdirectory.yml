@@ -13,10 +13,14 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
+    - name: Create 'log' Directory
+      run: mkdir -p log
+
     - name: Copy Pushed File to 'log' Directory
       run: |
-        mkdir -p log
-        mv "${GITHUB_WORKSPACE}/$file" "${GITHUB_WORKSPACE}/log/"
+        for file in ${{ github.event.head_commit.added }}; do
+          mv "${GITHUB_WORKSPACE}/$file" "${GITHUB_WORKSPACE}/log/$(basename "$file")"
+        done
 
     - name: Commit and Push Changes
       run: |
